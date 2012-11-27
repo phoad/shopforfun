@@ -1,0 +1,113 @@
+<html>
+<head>
+<script type = "text/javascript">
+	//<![CDATA[
+	function showChoices()
+	{
+		var selLanguage = document.getElementById("selLanguage");
+		var result = "<h2> Your Languages<\/h2>";
+		result += "<ul> \n";
+		
+		for (i = 0; i < selLanguage.length; i++)
+		{
+			currentOption = selLanguage[i];
+			if (currentOption.selected == true) 
+			{
+				result += "  <li>" + currentOption.value + "<\/li>\n";
+			}
+		}
+		
+		result += "<\/ul>\n";
+		
+		output = document.getElementById("output");
+		output.innerHTML = result;
+		
+		result = "<ul> ";
+		
+		var chkPepperoni = document.getElementById("chkPepperoni");
+		var chkMushroom = document.getElementById("chkMushroom");
+		
+		if (chkPepperoni.checked) 
+		{
+			result += "<li>" + chkPepperoni.value + "<\/li>";
+		}
+		
+		if (chkMushroom.checked) 
+		{
+			result += "<li>" + chkMushroom.value + "<\/li>";
+		}
+		
+		output2 = document.getElementById("output2");
+		output2.innerHTML = result;
+		
+		
+		result = "<ul> ";
+		
+		var weapon = document.getElementsByName("weapon");
+		for (i = 0; i < weapon.length;  i++) 
+		{
+			var currentWeapon = weapon[i];
+			
+			if (currentWeapon.checked) 
+			{
+				var selectedWeapon = currentWeapon.value;
+			}
+		}
+		
+		result += "<li> Selected weapon: " + selectedWeapon + "<\/li>\n";
+		
+		result += "<\/ul>\n";
+		
+		output3 = document.getElementById("output3");
+		output3.innerHTML = result;
+	}
+	//]]>
+</script>
+</head>
+<body>
+<form action = "">
+ <fieldset>
+	<label> Select a language </label>
+	<select id = "selLanguage"
+		multiple = "multiple"
+		size = "10">
+		<option value = "XHTML">XHTML</option>
+		<option value = "CSS">CSS</option>
+		<option value = "JavaScript">Java Script</option>
+		<option value = "XHTML">XHTML</option>
+		<option value = "CSS">CSS</option>
+		<option value = "JavaScript">Java Script</option>
+		<option value = "XHTML">XHTML</option>
+		<option value = "CSS">CSS</option>
+		<option value = "JavaScript">Java Script</option>
+		<option value = "XHTML">XHTML</option>
+		<option value = "CSS">CSS</option>
+		<option value = "JavaScript">Java Script</option>
+	</select>
+	
+	<input type = "checkbox" id = "chkPepperoni" value = "pepperoni" />
+	<label for = "chkPepperoni">Pepperoni</label>
+	
+	<input type = "checkbox" id = "chkMushroom" value = "mushroom" />
+	<label for = "chkMushroom">Mushroom</label>
+	
+	
+	<input type = "radio" name = "weapon" id = "radFlower" value = "flower" />
+	<label for = "radFlower">Flower</label>
+	
+	<input type = "radio" name = "weapon" id = "radMoodle" value = "Moodle" />
+	<label for = "radMoodle">Moodle</label>
+	
+	<button type = "button" onclick = "showChoices()"> 
+		Submit
+	</button>
+ </fieldset>
+</form>
+<div id = "output">
+</div>
+<div id = "output2">
+</div>
+<div id = "output3">
+</div>
+</body>
+</html>
