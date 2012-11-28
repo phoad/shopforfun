@@ -1,4 +1,4 @@
-var prite;
+var sprite;
 var x, y;
 
 var MIN_X = 15;
@@ -9,7 +9,9 @@ var MAX_Y = 435;
 function init() 
 {
 	sprite = document.getElementById("sprite");
+	msprite = document.getElementById("msprite");
 	document.onkeydown = keyListener;
+	document.onmousemove = mouseListener;
 }
 
 function checkBounds()
@@ -62,3 +64,18 @@ function keyListener(e)
 		moveSprite(0, 10);
 }
 
+function mouseListener(e)
+{
+	if (!e) {
+		e = window.event;
+	}
+	
+	height = parseInt(msprite.style.height);
+	width = parseInt(msprite.style.width);
+	
+	x = e.pageX - (width / 2);
+	y = e.pageY - (height / 2);
+	
+	msprite.style.left = x + "px";
+	msprite.style.top = y + "px";
+}
