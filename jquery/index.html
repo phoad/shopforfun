@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<style type="text/css">
+			#content {width: 300px; background-color: yellow; lefT: 300px; top: 100px; padding-left: .5em; border: 0px none black;}
+			div {border: 2px; solid red; padding: 3px;}
+		</style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+//<~[CDATA[
+$(init)
+
+function init() {
+	$("#mybutton").click(move);
+}
+
+function move() {
+	//$("#content").html("<p>Fuck you</p>");
+	$("#content").animate({
+	"left": "+=10px",
+	"top": "+=10px"
+	}
+	, 100);
+}
+//]]
+</script>	
+	</head>
+
+<body>
+<form action = "">
+	<fieldset>
+		<button type = "button" id = "mybutton"> Button </button>
+	</fieldset>
+</form>
+</body>
+	
+<div id = "content">
+	<p> This is the original content </p>
+</div>
+
+</html>
